@@ -1,0 +1,14 @@
+#登录页面定位元素值
+base_url : 'http://192.168.1.253/#/'
+#账号输入框
+name : '//*[@class="el-input__inner"]'
+#密码输入框
+pwd : '//*[@id="app"]/div/div/form/div[2]/div/div/input'
+#登录按钮
+loginBtn : '//*[@id="app"]/div/div/form/div[3]/div/button/span'
+#alert警告框
+alert : '/html/body/div[2]/p'
+#密码输入框警告信息
+pwdInputMessage : '//*[@id="app"]/div/div/form/div[2]/div/div[2]'
+#账号输入框警告信息
+userInputMessage : '//*[@id="app"]/div/div/form/div[1]/div/div[2]'
