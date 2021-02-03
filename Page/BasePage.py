@@ -1,3 +1,4 @@
+import pytest
 import yaml
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -13,14 +14,15 @@ class BasePage:
             self.driver.implicitly_wait(5)
             #访问页面
             self.driver.get(self._base_url)
+            print(self.__class__.__name__+"页面开始测试...")
         else:
             self.driver = driver
 
 #注意该位置多文件后是否会出现问题
-    @staticmethod
     #读取yaml文件
-    def loadYaml(filename):
-        Data = yaml.load(open(filename, encoding='utf-8'),Loader=yaml.FullLoader)
+    def loadYaml(self,filename):
+        with open(filename,encoding="utf-8") as f:
+            Data = yaml.safe_load(f)
         return Data
 
 
@@ -28,20 +30,10 @@ class BasePage:
     #     self.driver.find_element_by_xpath(self.Data.get(ymlName))
 
     def close(self):
-        print("十秒后关闭浏览器。。。")
+        print(self.__class__.__name__+"页面测试结束")
         #强制等待十秒后关闭浏览器
-        time.sleep(10)
-        self.driver.close()
 
 
 
 
 
-class TestC():
-    def setup(self):
-        print("start")
-    def teardown(self):
-        print("end")
-    @pytest.mark.parametrize("data",[1,2,3,4,5,6,7,8,9,10])
-    def test1(self,data):
-        print(data)
