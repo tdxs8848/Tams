@@ -1,14 +1,14 @@
 import sys
-import pytest
-from Page.IndexPage import IndexPage
+from Page.config import BaseConfig
 sys.path.append("../")
 from Page.LoginPage import LoginPage
-from TestCase.test_1login import TestLogin
+
 
 
 class TestIndex:
     def setup_class(self):
-        self.index = IndexPage()
+        self.index = LoginPage().login_sucss(BaseConfig.loginuser,BaseConfig.loginpwd)
+
 
     def teardown_class(self):
         # self.login.driver.switch_to.window(self.login.driver.window_handles[0])

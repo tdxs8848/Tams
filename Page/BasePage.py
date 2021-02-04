@@ -32,8 +32,8 @@ class BasePage:
     def close(self):
         print(self.__class__.__name__+"页面测试结束")
         #强制等待十秒后关闭浏览器
-        time.sleep(10)
-        self.driver.quit()
+        time.sleep(2)
+        # self.driver.quit()
 
 
 

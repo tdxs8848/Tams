@@ -59,9 +59,10 @@ class TestLogin:
     @allure.title("正确登录跳转至user页面")
     def test_login_sucss(self):
         #登录成功后跳至首页
-        self.index = self.login.login_sucss(BaseConfig.loginuser,BaseConfig.loginpwd)
+        index = self.login.login_sucss(BaseConfig.loginuser,BaseConfig.loginpwd)
         #首页打开账号管理页面
         # self.index.open_user_page()
+        return index
 
 
 
