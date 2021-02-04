@@ -6,7 +6,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 import time
 class BasePage:
     def __init__(self,driver:WebDriver=None):
-        print("正在初始化页面。。。")
+        print("正在初始化"+self.__class__.__name__+"页面。。。")
         if driver is None:
             #打开浏览器
             self.driver =webdriver.Chrome(executable_path="../Driver/chromedriver.exe")
@@ -32,6 +32,8 @@ class BasePage:
     def close(self):
         print(self.__class__.__name__+"页面测试结束")
         #强制等待十秒后关闭浏览器
+        time.sleep(10)
+        self.driver.quit()
 
 
 

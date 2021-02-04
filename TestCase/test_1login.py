@@ -1,16 +1,15 @@
 import sys
-
-import pytest
-
 sys.path.append("../")
+import pytest
+from Page.config import BaseConfig
 import allure
 from Page.LoginPage import LoginPage
 import time
 
 
-@pytest.mark.run(order=-1)
 @allure.feature("登录页面")
 class TestLogin:
+    index = None
     # 所有方法执行之前
     def setup_class(self):
         self.login = LoginPage()
@@ -20,6 +19,7 @@ class TestLogin:
     def teardown_class(self):
         # self.login.driver.switch_to.window(self.login.driver.window_handles[0])
         self.login.close()
+
 
     #每个方法后执行
     def teardown(self):
@@ -57,11 +57,22 @@ class TestLogin:
     #正确登录跳转至首页
     @allure.story("登录功能")
     @allure.title("正确登录跳转至user页面")
-    def test_login_sucss_open_userpage(self):
+    def test_login_sucss(self):
         #登录成功后跳至首页
-        index = self.login.login_sucss("143637","123456")
-        time.sleep()
+        self.index = self.login.login_sucss(BaseConfig.loginuser,BaseConfig.loginpwd)
         #首页打开账号管理页面
-        index.open_user_page()
+        # self.index.open_user_page()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
