@@ -55,3 +55,12 @@ class LoginPage(BasePage):
         tips_message = self.driver.find_element_by_xpath(self.LoginData.get("userInputMessage")).text
         return tips_message
 
+
+
+    def login_sucss_switch(self,pageObject:BasePage):
+        '''
+        实现登录跳转功能
+        在其他页面依赖登录功能时，传入他们的页面对象后，对登录后的driver进行返回实现复用
+        '''
+        self.loginin(BaseConfig.loginuser,BaseConfig.loginpwd)
+        return pageObject(self.driver)

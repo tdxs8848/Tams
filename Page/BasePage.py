@@ -30,10 +30,10 @@ class BasePage:
     #     self.driver.find_element_by_xpath(self.Data.get(ymlName))
 
     def close(self):
-        print(self.__class__.__name__+"页面测试结束")
+        print(self.__class__.__name__+"页面测试结束，等待五秒后关闭浏览器")
         #强制等待十秒后关闭浏览器
-        time.sleep(2)
-        # self.driver.quit()
+        time.sleep(5)
+        self.driver.quit()
 
 
 
