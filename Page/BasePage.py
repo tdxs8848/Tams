@@ -10,6 +10,8 @@ class BasePage:
         if driver is None:
             #打开浏览器
             self.driver =webdriver.Chrome(executable_path="../Driver/chromedriver.exe")
+            #最大化窗口
+            self.driver.maximize_window()
             #设置隐式等待时间
             self.driver.implicitly_wait(5)
             #访问页面
@@ -24,7 +26,6 @@ class BasePage:
         with open(filename,encoding="utf-8") as f:
             Data = yaml.safe_load(f)
         return Data
-
 
     # def findElementXpath(self,ymlName):
     #     self.driver.find_element_by_xpath(self.Data.get(ymlName))

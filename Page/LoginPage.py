@@ -2,7 +2,6 @@ import pytest
 from selenium.webdriver.common.by import By
 from Page.BasePage import BasePage
 import time
-from Page.IndexPage import IndexPage
 from Page.config import BaseConfig
 
 
@@ -32,7 +31,7 @@ class LoginPage(BasePage):
     #成功登录
     def login_sucss(self,username,password):
         self.loginin(username,password)
-        return IndexPage(self.driver)
+
 
     #错误登录
     def login_error(self,username,password):
