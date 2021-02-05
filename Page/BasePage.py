@@ -17,10 +17,12 @@ class BasePage:
             #访问页面
             self.driver.get(self._base_url)
             print(self.__class__.__name__+"页面开始测试...")
+
+
         else:
             self.driver = driver
 
-#注意该位置多文件后是否会出现问题
+
     #读取yaml文件
     def loadYaml(self,filename):
         with open(filename,encoding="utf-8") as f:
@@ -31,11 +33,14 @@ class BasePage:
     #     self.driver.find_element_by_xpath(self.Data.get(ymlName))
 
     def close(self):
-        print(self.__class__.__name__+"页面测试结束，等待五秒后关闭浏览器")
+        print(self.__class__.__name__+"页面测试结束，等待三秒后关闭浏览器")
         #强制等待十秒后关闭浏览器
-        time.sleep(5)
+        time.sleep(3)
         self.driver.quit()
 
+    #使用该方法的ObjectPage必须对PageElement进行赋值
+    def findElementXpathYml(self,nameElement):
+        return self.driver.find_element_by_xpath(self.PageElement.get(nameElement))
 
 
 

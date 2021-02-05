@@ -12,3 +12,7 @@ alert : '/html/body/div[2]/p'
 pwdInputMessage : '//*[@id="app"]/div/div/form/div[2]/div/div[2]'
 #账号输入框警告信息
 userInputMessage : '//*[@id="app"]/div/div/form/div[1]/div/div[2]'
+#上方导航栏下拉项目选择框
+topNavSelectPro: '//*[@id="app"]/div/div[1]/div/div[1]/div/div[1]/input'
+#上方导航栏下拉项目选择框所有li信息
+topNavSelectProLi: '//*[@id="app"]/div/div[1]/div/div[1]/div/div[2]/div[1]/div[1]/ul'
