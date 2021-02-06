@@ -21,7 +21,7 @@ class TestLogin:
 
     #每个方法后执行
     def teardown(self):
-        time.sleep(0.5)
+        time.sleep(0.2)
 
     #错误密码登录
     @allure.story("登录功能")

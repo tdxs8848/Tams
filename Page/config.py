@@ -9,4 +9,6 @@ class BaseConfig:
     LOGINPWD = 'admin'
     #所选项目
     PROJECT = "ctest"
+    #当运行项目比较卡导致，大批量用例报错时，建议调大该数值，sleeptime是增加关键跳转位置的时间
+    SLEEPTIME = 0.5
 
