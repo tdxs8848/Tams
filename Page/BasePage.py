@@ -28,6 +28,7 @@ class BasePage:
 
         else:
             self.driver = driver
+            # 读取页面对应的Element.yml文件
             self.PageElement = self.loadYaml(
                 BaseConfig.PROJECTPATH + "Tams\\Page\\datas\\" + self.__class__.__name__ + ".yml")
 

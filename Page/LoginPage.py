@@ -2,6 +2,8 @@ import pytest
 from selenium.webdriver.common.by import By
 from Page.BasePage import BasePage
 import time
+
+from Page.PageSystem.UserPage import UserPage
 from Page.config import BaseConfig
 
 
@@ -31,6 +33,7 @@ class LoginPage(BasePage):
     # 成功登录
     def login_sucss(self, username, password):
         self.loginin(username, password)
+        return UserPage(self.driver)
 
     # 错误登录
     def login_error(self, username, password):
@@ -53,6 +56,13 @@ class LoginPage(BasePage):
         # 获取警告信息
         tips_message = self.driver.find_element_by_xpath(self.PageElement.get("userInputMessage")).text
         return tips_message
+
+    # 成功登录后点击[退出]按钮
+    def login_sucss_quit(self):
+        userPage = self.login_sucss(BaseConfig.LOGINUSER,BaseConfig.LOGINPWD)
+        userPage.findElementXpathYml('quitBtn').click()
+        return self.findElementXpathYml('quitMsg').get_attribute('textContent')
+
 
     def login_sucss_switch(self, pageObject: BasePage):
         '''

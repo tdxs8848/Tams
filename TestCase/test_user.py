@@ -56,7 +56,7 @@ class TestUser:
 
 
 
-    # TODO:完成手机参数化
+
     @pytest.mark.parametrize("phone,errormessage",
                              [['', '电话号不能为空，且长度为11位'],
                               ['23424405192', '电话号码格式不正确'],

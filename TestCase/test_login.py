@@ -59,6 +59,14 @@ class TestLogin:
         #登录成功后跳至首页
         self.login.login_sucss(BaseConfig.LOGINUSER,BaseConfig.LOGINPWD)
 
+    #成功登录后点击[退出]
+    @allure.story("退出功能")
+    @allure.title("正确登录后点击[退出]按钮")
+    def test_login_quit(self):
+        msg = self.login.login_sucss_quit()
+        assert msg == "退出成功"
+
+
 
 
 

@@ -42,3 +42,5 @@ phoneEditInputErrMsg: '//*[@id="pane-账号管理"]/div/div[1]/main/div/div/form
 editBtn: '//*[@id="pane-账号管理"]/div/div[1]/main/div/div/form/div[6]/div/button[1]/span'
 #编辑账号页面取消按钮
 cancelEditBtn: '//*[@id="pane-账号管理"]/div/div[1]/main/div/div/form/div[6]/div/button[2]/span'
+#成功登录后，首页的退出按钮
+quitBtn: '//*[text()= "退出"]'
