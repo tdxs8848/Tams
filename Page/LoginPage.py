@@ -12,21 +12,10 @@ class LoginPage(BasePage):
 
     # 定义登录方法
     def loginin(self, username, password):
-        # 清空输入框的值
-        # 使用findElementXpathYml方法进行改造
-        # self.driver.find_element(By.XPATH, self.LoginElement.get('name')).clear()
-        # self.driver.find_element(By.XPATH, self.LoginElement.get('pwd')).clear()
         self.findElementXpathYml('name').clear()
         self.findElementXpathYml('pwd').clear()
-        # 输入账号密码
-        # 使用findElementXpathYml方法进行改造
-        # self.driver.find_element(By.XPATH, self.LoginElement.get('name')).send_keys(username)
-        # self.driver.find_element(By.XPATH, self.LoginElement.get('pwd')).send_keys(password)
         self.findElementXpathYml('name').send_keys(username)
         self.findElementXpathYml('pwd').send_keys(password)
-        # 点击登录
-        # 使用findElementXpathYml方法进行改造
-        # self.driver.find_element(By.XPATH, self.LoginElement.get('loginBtn')).click()
         self.findElementXpathYml('loginBtn').click()
         time.sleep(2)
 

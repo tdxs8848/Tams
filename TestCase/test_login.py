@@ -4,7 +4,7 @@ import pytest
 from Page.config import BaseConfig
 import allure
 from Page.LoginPage import LoginPage
-import time
+from time import sleep
 
 
 @allure.feature("登录页面")
@@ -21,7 +21,7 @@ class TestLogin:
 
     #每个方法后执行
     def teardown(self):
-        time.sleep(0.2)
+        sleep(0.2)
 
     #错误密码登录
     @allure.story("登录功能")
@@ -53,11 +53,12 @@ class TestLogin:
         assert error_message == "请输入登录名，且长度不小于5位"
 
     #正确登录跳转至首页
-    @allure.story("登录功能")
-    @allure.title("正确登录跳转至index页面")
-    def test_login_sucss(self):
-        #登录成功后跳至首页
-        self.login.login_sucss(BaseConfig.LOGINUSER,BaseConfig.LOGINPWD)
+    # @allure.story("登录功能")
+    # @allure.title("正确登录跳转至index页面")
+    # def test_login_sucss(self):
+    #     #登录成功后跳至首页
+    #     self.login.login_sucss(BaseConfig.LOGINUSER,BaseConfig.LOGINPWD)
+
 
     #成功登录后点击[退出]
     @allure.story("退出功能")

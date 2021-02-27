@@ -97,7 +97,7 @@ class TestUser:
         errorMsg = self.user.user_edit_account_errorphone("selauto",phone)
         assert errorMsg == errorMessage
 
-    # def test_add_account_sucss(self):
-    #     # 使用月日与时间创建的字符串作为新增的用户名
-    #     accountname = time.strftime("%m%d%H%M", time.localtime())
-    #     self.user.user_add_account_sucss(accountname, "123456", "selauto", "13424405192")
+    def test_add_account_sucss(self):
+        # 使用月日与时间创建的字符串作为新增的用户名
+        accountname = time.strftime("%m%d%H%M", time.localtime())
+        self.user.user_add_account_sucss(accountname, "123456", "selauto", "13424405192")

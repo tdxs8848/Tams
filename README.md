@@ -1,5 +1,5 @@
 ## 基于pytest的seleniumpo模型封装
-在开始使用本项目之前，强烈建议您先阅读本文档
+在开始使用本项目之前，建议您先阅读本文档
 
 ### 目录
 - Page：该目录用于存放所有页面对象，实际的操作全部封装在该目录的文件
@@ -15,6 +15,9 @@
 5. datas下的yml与Page下的page文件必须同名，才可以使用BasePage中的PageElement对象，例：UserPage.py--UserPage.yml，这样系统会在调用UserPage时自动读取同名yml里面的文件
 
 ### 使用说明
+环境准备：
+- 安装和配置环境变量allure、chromedriver 
+- pip安装pytest、pytest-allure、pyyaml、selenium
+
 1. 在TestCase目录下使用cmd运行pytest
 2. 自动化脚本运行完之后，报告会自动生成，在TestCase\\bin目录下运行openallureReport.bat
-
